@@ -118,7 +118,7 @@ def main():
 
     train_loader = DataLoaderX(
         datasets.ImageFolder(traindir, transforms.Compose([
-            transforms.Resize((args.height,args.width)),
+            transforms.Resize((int(args.height),int(args.width))),
             transforms.RandomVerticalFlip(0.93),
             transforms.ToTensor(),
             normalize,
@@ -128,7 +128,7 @@ def main():
 
     val_loader = DataLoaderX(
         datasets.ImageFolder(valdir, transforms.Compose([
-            transforms.Resize((args.height,args.width)),
+            transforms.Resize((int(args.height),int(args.width))),
             transforms.ToTensor(),
             normalize,
         ])),

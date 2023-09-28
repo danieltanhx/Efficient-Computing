@@ -39,6 +39,8 @@ parser = argparse.ArgumentParser(description='PyTorch ImageNet Training')
 
 # Datasets
 parser.add_argument('-d', '--data', default='path to dataset', type=str)
+parser.add_argument('-height', '--height', default='height', type=str)
+parser.add_argument('-width', '--width', default='width', type=str)
 parser.add_argument('-val', '--val', default='path to dataset', type=str)
 parser.add_argument('-j', '--workers', default=8, type=int, metavar='N',
                     help='number of data loading workers (default: 4)')

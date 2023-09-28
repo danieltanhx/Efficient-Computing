@@ -128,8 +128,7 @@ def main():
 
     val_loader = DataLoaderX(
         datasets.ImageFolder(valdir, transforms.Compose([
-            transforms.Resize(256),
-            transforms.CenterCrop(224),
+            transforms.Resize((args.height,args.width),
             transforms.ToTensor(),
             normalize,
         ])),

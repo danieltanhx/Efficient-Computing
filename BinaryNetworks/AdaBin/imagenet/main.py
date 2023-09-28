@@ -118,8 +118,8 @@ def main():
 
     train_loader = DataLoaderX(
         datasets.ImageFolder(traindir, transforms.Compose([
-            transforms.RandomResizedCrop(224),
-            transforms.RandomHorizontalFlip(),
+            transforms.Resize((args.height,args.width),
+            transforms.RandomVerticalFlip(0.93),
             transforms.ToTensor(),
             normalize,
         ])),

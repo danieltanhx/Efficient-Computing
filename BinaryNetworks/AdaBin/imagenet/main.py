@@ -39,6 +39,7 @@ parser = argparse.ArgumentParser(description='PyTorch ImageNet Training')
 
 # Datasets
 parser.add_argument('-d', '--data', default='path to dataset', type=str)
+parser.add_argument('-val', '--val', default='path to dataset', type=str)
 parser.add_argument('-j', '--workers', default=8, type=int, metavar='N',
                     help='number of data loading workers (default: 4)')
 # Optimization options
@@ -108,8 +109,8 @@ def main():
     cudnn.benchmark = True
     print('    Total params: %.2fM' % (sum(p.numel() for p in model.parameters())/1000000.0))
     # Data loading code
-    traindir = os.path.join(args.data)
-    valdir = os.path.join(args.data, 'val')
+    traindir = args.data
+    valdir = args.val
     normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                      std=[0.229, 0.224, 0.225])
 
